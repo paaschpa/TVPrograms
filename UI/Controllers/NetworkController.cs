@@ -24,10 +24,23 @@ namespace UI.Controllers
 
         public ActionResult List()
         {
+            /* See, I told you - See page /Network/List.aspx to know why you just got served
+             * a helping of I told you so...careful, don't get got in a recursive 'I told you so'
+            */
             IList<Network> networks = _networkRepository.GetAll();
             ViewData["ddlNetworks"] = new SelectList(networks,"id","NetworkName");
-            
-            return View(networks);
+
+            Network network = _networkRepository.GetById(networks[0].id);
+            return View(network);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult List(FormCollection formvalues)
+        {
+            Network network = _networkRepository.GetById(Convert.ToInt32(formvalues["ddlNetworks"]));
+
+            ViewData["ddlNetworks"] = new SelectList(_networkRepository.GetAll(), "id", "NetworkName", formvalues["ddlNetworks"]);
+            return View(network);
         }
 
         public ActionResult ListJson()
@@ -36,22 +49,15 @@ namespace UI.Controllers
             ViewData["ddlNetworks"] = new SelectList(networks, "id", "NetworkName");
             return View("");
         }
-        public JsonResult ListJsonData(int id)
+
+        public ActionResult ListData(int id)
         {
             Network network = _networkRepository.GetById(id);
-            object obj = _networkMapper.Map(network);
-            return Json(obj);
-        }
 
-        [AcceptVerbs(HttpVerbs.Post)] 
-        public ActionResult List(FormCollection formvalues)
-        {
-            Network[] networks = new Network[1];
-            Network network = _networkRepository.GetById(Convert.ToInt32(formvalues["ddlNetworks"]));
-            networks[0] = network;
+            if (Request.IsAjaxRequest())
+                return PartialView("ProgramList", network.Programs);
 
-            ViewData["ddlNetworks"] = new SelectList(_networkRepository.GetAll(), "id", "NetworkName",formvalues["ddlNetworks"]);
-            return View(networks);
+            return View("");
         }
 
     }

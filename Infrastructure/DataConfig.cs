@@ -8,6 +8,14 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Automapping;
 
+/*
+ * The stuff below works because I didn't write it. Most is hijacked from the book
+ * ASP.NET MVC In Action - Chapter 13.3 Nhibernate is for getting ladies 
+ * Also, the files NhibernateModule.cs and SessionCache.cs are related to this and 
+ * come from the book as well. Generally, I don't read books, but the guy on the cover is 
+ * very dapper and surely has ladies foraging about for him.
+*/
+
 namespace TVPrograms.Infrastructure
 {
     public class DataConfig

@@ -1,5 +1,5 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
-Inherits="System.Web.Mvc.ViewPage<Network[]>" %>
+Inherits="System.Web.Mvc.ViewPage<Network>" %>
 <%@ Import Namespace="TVPrograms.Core.Domain.Model"%>
 <%@ Import Namespace="TVPrograms.UI.Helpers" %>
 
@@ -16,58 +16,40 @@ Inherits="System.Web.Mvc.ViewPage<Network[]>" %>
 table td {padding:0px; border-spacing:0px; border-collapse:collapse; height:25px; width:25px;}
 </style>
 
-<script language="javascript">
+<script language="JavaScript" type="text/javascript">
 
     $(document).ready(function() {
+
+        ajaxDataCall($('#ddlNetworks').val());
+
         $("#ddlNetworks").change(function() {
             var NetworkID = $('#ddlNetworks').val();
             if (NetworkID != 0) {
-                $.getJSON('ListJsonData/' + NetworkID, function(data) {
-                    //Set and Apply template
-                    $('#dvPrograms').setTemplateElement('jtemplate');
-                    $('#dvPrograms').processTemplate(data);
-                });
+                ajaxDataCall(NetworkID);
             }
         });
     });
 
-</script>
+    function ajaxDataCall(id) {
+        //alert('Im being called ' + id );
+        $.ajax({
+            url: '/Network/ListData/' + id,
+            dataType: 'html',
+            success: function(data) {
+                $('#dvPrograms').html(data);
+            }
+        });
+    }
+    
+</script>  
 
 
 <%using (Html.BeginForm()) {%>
 <%=Html.DropDownList("ddlNetworks")%>
 <%} %>
 
-<!-- Template content -->
-<textarea id="jtemplate" style="display:none">
-<table cellpadding="0" cellspacing="0">
-    <tr>
-        <th>Program Name</th>
-        <th>Air Dates By Quarter</th>
-    </tr>
-      {#foreach $T.Programs as program}
-    <tr>
-        <td class="blueBorderFirstCol">
-            {$T.program.ProgramName}
-        </td>
-        <td>
-            <table>
-                <tr>
-                    {#foreach $T.program.Seasons as season}
-                        {#foreach $T.season.Episodes as episode}
-                        <td>{$T.episode.AirDate}</td>
-                        {#/for}
-                    {#/for}
-                </tr>
-            </table>
-            
-        </td>
-    </tr>
-	{#/for}
-</table>
-</textarea>
 
 <!-- Output elements -->
-<div id="dvPrograms" class="jTemplatesTest"></div>
+<div id="dvPrograms">Nothing</div>
 
 </asp:Content>

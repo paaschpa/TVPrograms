@@ -385,7 +385,6 @@
     <Content Include="Views\Network\ListJson.aspx" />
     <Content Include="Views\Program\Index.aspx" />
     <Content Include="Views\Program\IndexJson.aspx" />
-    <Content Include="Views\Shared\ProgramListJson.ascx" />
     <Content Include="Views\Shared\ProgramList.ascx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />

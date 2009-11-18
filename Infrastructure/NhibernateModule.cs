@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Web;
 
+/*
+ * Who writes this stuff (not me)??? Credit goes to 'ASP.NET MVC In Action'. If I did rewrite it
+ * and it's now garbage, the authors of 'ASP.NET MVC In Action' so disregard previous sentence. You know
+ * what, just unread all this and there shouldn't be any issues. 
+*/
+
 namespace TVPrograms.Infrastructure
 {
     public class NHibernateModule : IHttpModule

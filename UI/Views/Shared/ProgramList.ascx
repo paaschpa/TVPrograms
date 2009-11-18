@@ -13,7 +13,7 @@ table td {padding:0px; border-spacing:0px; border-collapse:collapse; height:25px
  <table cellpadding="0" cellspacing="0">
 		  <tr>
 				<th>Program Name</th>
-		        <th>Air Dates By Quarter</th>
+		        <th>New Episode Air Dates By Quarter <i>(good-looking people don't watch reruns)</i></th>
 		  </tr>
 	      <% foreach (var program in Model) 
                 { 

@@ -15,17 +15,23 @@ namespace TVPrograms.UI
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("jtemplate.htm/{*pathInfo}");
-
-
             routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
             );
 
+            routes.Add(new Route
+            ("Network/ListData/{id}", new MvcRouteHandler())
+                {
+                    Defaults = new RouteValueDictionary( 
+		            new {controller = "Network", action = "ListData", id=""}
+                    ),
+                }
+            );
+
         }
+
 
         protected void Application_Start()
         {
