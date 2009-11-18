@@ -1,0 +1,5 @@
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\bin\Debug\Core.dll
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\bin\Debug\Core.pdb
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\obj\Debug\Core.dll
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\obj\Debug\Core.pdb

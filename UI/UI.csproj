@@ -1,0 +1,446 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3B43775-FEF1-4656-B4B5-4A166729707E}</ProjectGuid>
+    <ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=0.3.1.74, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.5.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="Controllers\ProgramController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NetworkController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ProgramScheduleExtension.cs" />
+    <Compile Include="Models\Forms\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\Forms\AutoMapperProfile.cs" />
+    <Compile Include="Models\Forms\DaypartForm.cs" />
+    <Compile Include="Models\Forms\EpisodeForm.cs" />
+    <Compile Include="Models\Forms\EpisodeTweetForm.cs" />
+    <Compile Include="Models\Forms\Mappers\AutoFormMappercs.cs" />
+    <Compile Include="Models\Forms\Mappers\EpisodeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Forms\Mappers\IEpisodeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Forms\Mappers\INetworkMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\IProgramMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\ISeasonMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\NetworkMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\ProgramMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\SeasonMapper.cs" />
+    <Compile Include="Models\Forms\NetworkForm.cs" />
+    <Compile Include="Models\Forms\ProgramForm.cs" />
+    <Compile Include="Models\Forms\SeasonForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\themes\steel\images\._sprite5.psd" />
+    <None Include="Scripts\themes\steel\images\sprite5.psd" />
+    <Content Include="Scripts\jquery-jtemplates.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\js\grid.base.js" />
+    <Content Include="Scripts\js\grid.celledit.js" />
+    <Content Include="Scripts\js\grid.common.js" />
+    <Content Include="Scripts\js\grid.custom.js" />
+    <Content Include="Scripts\js\grid.formedit.js" />
+    <Content Include="Scripts\js\grid.import.js" />
+    <Content Include="Scripts\js\grid.inlinedit.js" />
+    <Content Include="Scripts\js\grid.locale-bg.js" />
+    <Content Include="Scripts\js\grid.locale-de.js" />
+    <Content Include="Scripts\js\grid.locale-dk.js" />
+    <Content Include="Scripts\js\grid.locale-el.js" />
+    <Content Include="Scripts\js\grid.locale-en.js" />
+    <Content Include="Scripts\js\grid.locale-fa.js" />
+    <Content Include="Scripts\js\grid.locale-fi.js" />
+    <Content Include="Scripts\js\grid.locale-fr.js" />
+    <Content Include="Scripts\js\grid.locale-is.js" />
+    <Content Include="Scripts\js\grid.locale-it.js" />
+    <Content Include="Scripts\js\grid.locale-pl.js" />
+    <Content Include="Scripts\js\grid.locale-pt-br.js" />
+    <Content Include="Scripts\js\grid.locale-pt.js" />
+    <Content Include="Scripts\js\grid.locale-ru.js" />
+    <Content Include="Scripts\js\grid.locale-sp.js" />
+    <Content Include="Scripts\js\grid.locale-tr.js" />
+    <Content Include="Scripts\js\grid.postext.js" />
+    <Content Include="Scripts\js\grid.setcolumns.js" />
+    <Content Include="Scripts\js\grid.subgrid.js" />
+    <Content Include="Scripts\js\grid.tbltogrid.js" />
+    <Content Include="Scripts\js\grid.treegrid.js" />
+    <Content Include="Scripts\js\jqDnR.js" />
+    <Content Include="Scripts\js\jqModal.js" />
+    <Content Include="Scripts\js\jquery.fmatter.js" />
+    <Content Include="Scripts\js\jquery.tablednd.js" />
+    <Content Include="Scripts\js\json2.js" />
+    <Content Include="Scripts\js\JsonXml.js" />
+    <Content Include="Scripts\js\min\grid.base-min.js" />
+    <Content Include="Scripts\js\min\grid.celledit-min.js" />
+    <Content Include="Scripts\js\min\grid.common-min.js" />
+    <Content Include="Scripts\js\min\grid.custom-min.js" />
+    <Content Include="Scripts\js\min\grid.formedit-min.js" />
+    <Content Include="Scripts\js\min\grid.import-min.js" />
+    <Content Include="Scripts\js\min\grid.inlinedit-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-bg-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-de-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-dk-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-el-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-en-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fa-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fi-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fr-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-is-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-it-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pl-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-br-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-ru-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-sp-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-tr-min.js" />
+    <Content Include="Scripts\js\min\grid.postext-min.js" />
+    <Content Include="Scripts\js\min\grid.setcolumns-min.js" />
+    <Content Include="Scripts\js\min\grid.subgrid-min.js" />
+    <Content Include="Scripts\js\min\grid.tbltogrid-min.js" />
+    <Content Include="Scripts\js\min\grid.treegrid-min.js" />
+    <Content Include="Scripts\js\min\jquery.fmatter-min.js" />
+    <Content Include="Scripts\js\min\json2-min.js" />
+    <Content Include="Scripts\js\min\JsonXml-min.js" />
+    <Content Include="Scripts\themes\basic\grid.css" />
+    <Content Include="Scripts\themes\basic\images\cd_run.gif" />
+    <Content Include="Scripts\themes\basic\images\dirty.gif" />
+    <Content Include="Scripts\themes\basic\images\down.gif" />
+    <Content Include="Scripts\themes\basic\images\find.gif" />
+    <Content Include="Scripts\themes\basic\images\first.gif" />
+    <Content Include="Scripts\themes\basic\images\folder.png" />
+    <Content Include="Scripts\themes\basic\images\grid-blue-ft.gif" />
+    <Content Include="Scripts\themes\basic\images\grid-blue-hd.gif" />
+    <Content Include="Scripts\themes\basic\images\headerbg.gif" />
+    <Content Include="Scripts\themes\basic\images\headerleft.gif" />
+    <Content Include="Scripts\themes\basic\images\headerright.gif" />
+    <Content Include="Scripts\themes\basic\images\ico-close.gif" />
+    <Content Include="Scripts\themes\basic\images\last.gif" />
+    <Content Include="Scripts\themes\basic\images\line3.gif" />
+    <Content Include="Scripts\themes\basic\images\loading.gif" />
+    <Content Include="Scripts\themes\basic\images\minus.gif" />
+    <Content Include="Scripts\themes\basic\images\next.gif" />
+    <Content Include="Scripts\themes\basic\images\nochild.gif" />
+    <Content Include="Scripts\themes\basic\images\off-first.gif" />
+    <Content Include="Scripts\themes\basic\images\off-last.gif" />
+    <Content Include="Scripts\themes\basic\images\off-next.gif" />
+    <Content Include="Scripts\themes\basic\images\off-prev.gif" />
+    <Content Include="Scripts\themes\basic\images\plus.gif" />
+    <Content Include="Scripts\themes\basic\images\prev.gif" />
+    <Content Include="Scripts\themes\basic\images\refresh.gif" />
+    <Content Include="Scripts\themes\basic\images\resize.gif" />
+    <Content Include="Scripts\themes\basic\images\row_add.gif" />
+    <Content Include="Scripts\themes\basic\images\row_delete.gif" />
+    <Content Include="Scripts\themes\basic\images\row_edit.gif" />
+    <Content Include="Scripts\themes\basic\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\basic\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\basic\images\spacer.gif" />
+    <Content Include="Scripts\themes\basic\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\basic\images\up.gif" />
+    <Content Include="Scripts\themes\coffee\grid.css" />
+    <Content Include="Scripts\themes\coffee\images\cd_run.gif" />
+    <Content Include="Scripts\themes\coffee\images\dirty.gif" />
+    <Content Include="Scripts\themes\coffee\images\down.gif" />
+    <Content Include="Scripts\themes\coffee\images\find.gif" />
+    <Content Include="Scripts\themes\coffee\images\first.gif" />
+    <Content Include="Scripts\themes\coffee\images\folder.png" />
+    <Content Include="Scripts\themes\coffee\images\grid-blue-ft.gif" />
+    <Content Include="Scripts\themes\coffee\images\grid-blue-hd.gif" />
+    <Content Include="Scripts\themes\coffee\images\headerbg.gif" />
+    <Content Include="Scripts\themes\coffee\images\headerleft.gif" />
+    <Content Include="Scripts\themes\coffee\images\headerright.gif" />
+    <Content Include="Scripts\themes\coffee\images\ico-close.gif" />
+    <Content Include="Scripts\themes\coffee\images\last.gif" />
+    <Content Include="Scripts\themes\coffee\images\line3.gif" />
+    <Content Include="Scripts\themes\coffee\images\loading.gif" />
+    <Content Include="Scripts\themes\coffee\images\minus.gif" />
+    <Content Include="Scripts\themes\coffee\images\next.gif" />
+    <Content Include="Scripts\themes\coffee\images\nochild.gif" />
+    <Content Include="Scripts\themes\coffee\images\off-first.gif" />
+    <Content Include="Scripts\themes\coffee\images\off-last.gif" />
+    <Content Include="Scripts\themes\coffee\images\off-next.gif" />
+    <Content Include="Scripts\themes\coffee\images\off-prev.gif" />
+    <Content Include="Scripts\themes\coffee\images\plus.gif" />
+    <Content Include="Scripts\themes\coffee\images\prev.gif" />
+    <Content Include="Scripts\themes\coffee\images\refresh.gif" />
+    <Content Include="Scripts\themes\coffee\images\resize.gif" />
+    <Content Include="Scripts\themes\coffee\images\row_add.gif" />
+    <Content Include="Scripts\themes\coffee\images\row_delete.gif" />
+    <Content Include="Scripts\themes\coffee\images\row_edit.gif" />
+    <Content Include="Scripts\themes\coffee\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\coffee\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\coffee\images\spacer.gif" />
+    <Content Include="Scripts\themes\coffee\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\coffee\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\coffee\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\coffee\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\coffee\images\up.gif" />
+    <Content Include="Scripts\themes\green\grid.css" />
+    <Content Include="Scripts\themes\green\images\cd_run.gif" />
+    <Content Include="Scripts\themes\green\images\dirty.gif" />
+    <Content Include="Scripts\themes\green\images\down.gif" />
+    <Content Include="Scripts\themes\green\images\find.gif" />
+    <Content Include="Scripts\themes\green\images\first.gif" />
+    <Content Include="Scripts\themes\green\images\folder.png" />
+    <Content Include="Scripts\themes\green\images\grid-blue-ft.gif" />
+    <Content Include="Scripts\themes\green\images\grid-blue-hd.gif" />
+    <Content Include="Scripts\themes\green\images\headerbg.gif" />
+    <Content Include="Scripts\themes\green\images\headerleft.gif" />
+    <Content Include="Scripts\themes\green\images\headerright.gif" />
+    <Content Include="Scripts\themes\green\images\ico-close.gif" />
+    <Content Include="Scripts\themes\green\images\last.gif" />
+    <Content Include="Scripts\themes\green\images\leaf.gif" />
+    <Content Include="Scripts\themes\green\images\line3.gif" />
+    <Content Include="Scripts\themes\green\images\loading.gif" />
+    <Content Include="Scripts\themes\green\images\minus.gif" />
+    <Content Include="Scripts\themes\green\images\next.gif" />
+    <Content Include="Scripts\themes\green\images\nochild.gif" />
+    <Content Include="Scripts\themes\green\images\off-first.gif" />
+    <Content Include="Scripts\themes\green\images\off-last.gif" />
+    <Content Include="Scripts\themes\green\images\off-next.gif" />
+    <Content Include="Scripts\themes\green\images\off-prev.gif" />
+    <Content Include="Scripts\themes\green\images\plus.gif" />
+    <Content Include="Scripts\themes\green\images\prev.gif" />
+    <Content Include="Scripts\themes\green\images\refresh.gif" />
+    <Content Include="Scripts\themes\green\images\resize.gif" />
+    <Content Include="Scripts\themes\green\images\row_add.gif" />
+    <Content Include="Scripts\themes\green\images\row_delete.gif" />
+    <Content Include="Scripts\themes\green\images\row_edit.gif" />
+    <Content Include="Scripts\themes\green\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\green\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\green\images\spacer.gif" />
+    <Content Include="Scripts\themes\green\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\green\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\green\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\green\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\green\images\up.gif" />
+    <Content Include="Scripts\themes\jqModal.css" />
+    <Content Include="Scripts\themes\sand\grid.css" />
+    <Content Include="Scripts\themes\sand\images\cd_run.gif" />
+    <Content Include="Scripts\themes\sand\images\dirty.gif" />
+    <Content Include="Scripts\themes\sand\images\down.gif" />
+    <Content Include="Scripts\themes\sand\images\find.gif" />
+    <Content Include="Scripts\themes\sand\images\first.gif" />
+    <Content Include="Scripts\themes\sand\images\folder.png" />
+    <Content Include="Scripts\themes\sand\images\grid-blue-ft.gif" />
+    <Content Include="Scripts\themes\sand\images\grid-blue-hd.gif" />
+    <Content Include="Scripts\themes\sand\images\headerbg.gif" />
+    <Content Include="Scripts\themes\sand\images\headerleft.gif" />
+    <Content Include="Scripts\themes\sand\images\headerright.gif" />
+    <Content Include="Scripts\themes\sand\images\ico-close.gif" />
+    <Content Include="Scripts\themes\sand\images\last.gif" />
+    <Content Include="Scripts\themes\sand\images\line3.gif" />
+    <Content Include="Scripts\themes\sand\images\loading.gif" />
+    <Content Include="Scripts\themes\sand\images\minus.gif" />
+    <Content Include="Scripts\themes\sand\images\next.gif" />
+    <Content Include="Scripts\themes\sand\images\nochild.gif" />
+    <Content Include="Scripts\themes\sand\images\off-first.gif" />
+    <Content Include="Scripts\themes\sand\images\off-last.gif" />
+    <Content Include="Scripts\themes\sand\images\off-next.gif" />
+    <Content Include="Scripts\themes\sand\images\off-prev.gif" />
+    <Content Include="Scripts\themes\sand\images\plus.gif" />
+    <Content Include="Scripts\themes\sand\images\prev.gif" />
+    <Content Include="Scripts\themes\sand\images\refresh.gif" />
+    <Content Include="Scripts\themes\sand\images\resize.gif" />
+    <Content Include="Scripts\themes\sand\images\row_add.gif" />
+    <Content Include="Scripts\themes\sand\images\row_delete.gif" />
+    <Content Include="Scripts\themes\sand\images\row_edit.gif" />
+    <Content Include="Scripts\themes\sand\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\sand\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\sand\images\spacer.gif" />
+    <Content Include="Scripts\themes\sand\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\sand\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\sand\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\sand\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\sand\images\up.gif" />
+    <Content Include="Scripts\themes\steel\grid.css" />
+    <Content Include="Scripts\themes\steel\images\._sprite5.png" />
+    <Content Include="Scripts\themes\steel\images\Arrow2 Down.png" />
+    <Content Include="Scripts\themes\steel\images\Arrow2 Up.png" />
+    <Content Include="Scripts\themes\steel\images\bg.gif" />
+    <Content Include="Scripts\themes\steel\images\cd_run.gif" />
+    <Content Include="Scripts\themes\steel\images\control_090.png" />
+    <Content Include="Scripts\themes\steel\images\control_270.png" />
+    <Content Include="Scripts\themes\steel\images\dirty.gif" />
+    <Content Include="Scripts\themes\steel\images\down.gif" />
+    <Content Include="Scripts\themes\steel\images\fhbg.gif" />
+    <Content Include="Scripts\themes\steel\images\find.gif" />
+    <Content Include="Scripts\themes\steel\images\find1.gif" />
+    <Content Include="Scripts\themes\steel\images\first.gif" />
+    <Content Include="Scripts\themes\steel\images\first.png" />
+    <Content Include="Scripts\themes\steel\images\folder.png" />
+    <Content Include="Scripts\themes\steel\images\headerleft1.gif" />
+    <Content Include="Scripts\themes\steel\images\headerright1.gif" />
+    <Content Include="Scripts\themes\steel\images\ico-close.gif" />
+    <Content Include="Scripts\themes\steel\images\last.gif" />
+    <Content Include="Scripts\themes\steel\images\last.png" />
+    <Content Include="Scripts\themes\steel\images\line3.gif" />
+    <Content Include="Scripts\themes\steel\images\loading.gif" />
+    <Content Include="Scripts\themes\steel\images\minus.gif" />
+    <Content Include="Scripts\themes\steel\images\next.gif" />
+    <Content Include="Scripts\themes\steel\images\next.png" />
+    <Content Include="Scripts\themes\steel\images\nochild.gif" />
+    <Content Include="Scripts\themes\steel\images\odown.gif" />
+    <Content Include="Scripts\themes\steel\images\off-first.gif" />
+    <Content Include="Scripts\themes\steel\images\off-last.gif" />
+    <Content Include="Scripts\themes\steel\images\off-next.gif" />
+    <Content Include="Scripts\themes\steel\images\off-prev.gif" />
+    <Content Include="Scripts\themes\steel\images\oup.gif" />
+    <Content Include="Scripts\themes\steel\images\plus.gif" />
+    <Content Include="Scripts\themes\steel\images\prev.gif" />
+    <Content Include="Scripts\themes\steel\images\prev.png" />
+    <Content Include="Scripts\themes\steel\images\refresh.gif" />
+    <Content Include="Scripts\themes\steel\images\refresh1.gif" />
+    <Content Include="Scripts\themes\steel\images\resize.gif" />
+    <Content Include="Scripts\themes\steel\images\row_add.gif" />
+    <Content Include="Scripts\themes\steel\images\row_add1.gif" />
+    <Content Include="Scripts\themes\steel\images\row_delete.gif" />
+    <Content Include="Scripts\themes\steel\images\row_delete1.gif" />
+    <Content Include="Scripts\themes\steel\images\row_edit.gif" />
+    <Content Include="Scripts\themes\steel\images\row_edit1.gif" />
+    <Content Include="Scripts\themes\steel\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\steel\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\steel\images\spacer.gif" />
+    <Content Include="Scripts\themes\steel\images\sprite.png" />
+    <Content Include="Scripts\themes\steel\images\sprite5.png" />
+    <Content Include="Scripts\themes\steel\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\steel\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\steel\images\up.gif" />
+    <Content Include="Scripts\themes\steel\images\wbg.gif" />
+    <Content Include="Views\Network\List.aspx" />
+    <Content Include="Views\Network\ListJson.aspx" />
+    <Content Include="Views\Program\Index.aspx" />
+    <Content Include="Views\Program\IndexJson.aspx" />
+    <Content Include="Views\Shared\ProgramListJson.ascx" />
+    <Content Include="Views\Shared\ProgramList.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{E089037F-30C0-4DB3-BDA2-E8278780F440}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{FA464DBE-1D82-4681-AA25-D0C019F07EDA}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2923</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
