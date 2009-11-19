@@ -10,10 +10,16 @@
 </style>
 
     <h2>FAQ</h2>
+    Q. How did you get to be so handsome? <br />
+        <div class="answer">
+        A. It's tough to answer questions like this because I'm so modest and humble.  I prefer to think of myself as a normal 
+        guy living in a world where a lot of unlucky people happen to be so ugly.  
+        </div>
+        <p></p>
     Q. How are you able to write so handsomely? <br />
         <div class="answer">
         A. I type naked. Normally, this would create an pretty nonhandsome image in your mind, but I'm pretty
-        sure the image I project via typed words is one of The Thinker crouched over a laptop. 
+        sure the image I project via typed words is one of The Thinker crouched over a laptop. <i>(it's like I read your mind - right?)</i>
         </div>
     <p></p>
     Q. Where are the tests? <br />

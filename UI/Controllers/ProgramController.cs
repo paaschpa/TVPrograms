@@ -24,12 +24,19 @@ namespace UI.Controllers
             _programMapper = mapper;
         }
 
-        public ActionResult Index(int id)
+        /* This is more an exercise of using AutoMapper to make your model...wait for it...
+        * more handsome (especailly with IndexJsonEpisodes since formatting JSON
+        * is something I don't know how to do well) .  Nobody likes working with Dates so lets convert them to strings with 
+        * the help of AutoMapper (see EpisodeFrom.cs for conversion). Strings make Dates easy and everyone 
+        * likes an easy Date...am I right...yeah you good-looking people know what I'm talking about. 
+        */
+        public ActionResult Index(int id, string sidx, string sord)
         {
             Program program = _programRepository.GetById(id);
-            IList<object[]> seasonreport = _programRepository.SeasonReport(id);
+            ProgramForm programForm = _programMapper.Map(program);
+            IList<object[]> seasonreport = _programRepository.SeasonReport(id, sidx, sord);
             ViewData["SeasonReport"] = seasonreport;
-            return View(program);
+            return View(programForm);
         }
 
         public ActionResult IndexJson()
@@ -37,20 +44,31 @@ namespace UI.Controllers
             return View("");
         }
 
-        public JsonResult IndexJsonData(int id)
+        public JsonResult IndexJsonEpisodes(int id, string sidx, string sord)
         {
-            IList<object[]> seasonreport = _programRepository.SeasonReport(id);
-            List<object> objJson = new List<object>();
-            int cnt = 1;
+            Program program = _programRepository.GetById(id);
+            ProgramForm programForm = _programMapper.Map(program);
+            return Json(programForm);
+        }
 
+        /* jQuery uses magic to populate the parmeters sidx, sord, page, rows
+         * As much as I like jQuery, if it turns out to be a witch we should still 
+         * burn it at the stake. It's the right thing to do.
+        */
+        public JsonResult IndexJsonSeasonData(int id, string sidx, string sord, int page, int rows)
+        {
+            IList<object[]> seasonreport = _programRepository.SeasonReport(id, sidx, sord);
+            List<object> objJsonRows = new List<object>();
+            
+            int cnt = 1;
             foreach (object[] obj in seasonreport)
             {
-               objJson.Add(new {id = cnt, cell = obj});
+               objJsonRows.Add(new {id = cnt, cell = obj});
                cnt += 1;
             }
 
-            var objJson1 = new { total = 1, records = seasonreport.Count, rows = objJson };
-            return Json(objJson1);
+            var JsonForJQGrid = new { total = 1, records = seasonreport.Count, rows = objJsonRows };
+            return Json(JsonForJQGrid);
 
         }
     }

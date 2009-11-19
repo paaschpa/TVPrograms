@@ -7,14 +7,30 @@ namespace TVPrograms.UI.Models.Forms {
 
 public class EpisodeForm
 {
-	
+    private string _starttime = DateTime.Now.ToString();
+    private string _airdate = DateTime.Now.ToString();
+
 	public virtual int id {get; set;}
 	
 	public virtual string EpisodeName {get; set;}
-	
-	public virtual string AirDate {get; set;}
 
-    public virtual string StartTime { get; set; }
+    public virtual string AirDate
+    {
+        get { return _airdate; }
+        set { _airdate = Convert.ToDateTime(value).ToShortDateString(); }
+    }
+
+    public string AirDateDay
+    {
+        get { return Convert.ToDateTime(AirDate).ToString("ddd"); }
+        set { ;}
+    }
+
+    public virtual string StartTime
+    {
+        get { return _starttime; }
+        set{_starttime = Convert.ToDateTime(value).ToString("t");}
+    }
 
     public virtual float Duration { get; set; }
 

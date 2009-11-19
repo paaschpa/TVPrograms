@@ -1,6 +1,6 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
-Inherits="System.Web.Mvc.ViewPage<Program>" %>
-<%@ Import Namespace="TVPrograms.Core.Domain.Model"%>
+Inherits="System.Web.Mvc.ViewPage<ProgramForm>" %>
+<%@ Import Namespace="TVPrograms.UI.Models.Forms"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 
@@ -8,13 +8,15 @@ Inherits="System.Web.Mvc.ViewPage<Program>" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    Series Review for <%=Model.ProgramName %>
-    <table border="1">
-        <th>Season</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Episode Count</th>
-        <th>Average Rating</th>
+    <strong>Series Review for <%=Model.ProgramName %></strong>
+    <table width="500">
+        <tr>
+            <th class="tableHeader">Season</th>
+            <th class="tableHeader">Start Date</th>
+            <th class="tableHeader">End Date</th>
+            <th class="tableHeader">Episode Count</th>
+            <th class="tableHeader">Weighted Rating</th>
+        </tr>
         <% foreach (object[] obj in (List<object[]>)ViewData["SeasonReport"])
            { %>
             <tr>
@@ -28,20 +30,22 @@ Inherits="System.Web.Mvc.ViewPage<Program>" %>
         
     </table>
     <p></p>    
-    <% foreach (Season season in Model.Seasons.OrderBy(season => season.SeasonNumber).Reverse())
+    <% foreach (SeasonForm season in Model.Seasons.OrderBy(season => season.SeasonNumber).Reverse())
                 { %>
-        <b>Season <%= season.SeasonNumber %> Review</b>
-        <table>
-            <th>Date</th>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Duration</th>
-            <th>Rating</th>
-            <% foreach (Episode episode in season.Episodes.OrderBy(episode => episode.AirDate).Reverse()){ %>
+        <strong>Season <%= season.SeasonNumber %> Episode Review</strong>
+        <table width="500">
             <tr>
-                <td><%= episode.AirDate.ToString("d")%></td>
-                <td><%= episode.AirDate.ToString("ddd") %></td>
-                <td><%= episode.StartTime.ToString("t") %></td>
+                <th class="tableHeader">Air Date</th>
+                <th class="tableHeader">Day</th>
+                <th class="tableHeader">Time</th>
+                <th class="tableHeader">Duration</th>
+                <th class="tableHeader">Rating</th>
+            </tr>
+            <% foreach (EpisodeForm episode in season.Episodes.OrderBy(episode => episode.AirDate).Reverse()){ %>
+            <tr>
+                <td><%= episode.AirDate %></td>
+                <td><%= episode.AirDateDay %></td>
+                <td><%= episode.StartTime %></td>
                 <td><%= episode.Duration %></td>
                 <td><%= episode.HHLD_Proj %></td>
             </tr>
@@ -55,8 +59,9 @@ Add 'Json' to url (/Program/IndexJson/{id}) to see same page using jquery and js
 <p></p>
 <b>What's going on?</b>
 <ul>
-    <li>This page uses the ProgramRepository and cycles the List of Seasons and List of Episodes (within the Season). </li>
-    <li>Some loop nesting is going on <i>(I hope no one's pregnant)</i></li>
-    <li>I used Nhibernate's CreateSQLQuery to write a custom SQL statment that does math <i>(I'll never forgive you Nhibernate for making me do work...yes, of course cuddling will help.)</i></li>
+    <li>This page uses the ProgramRepository to get our data. AutoMapper maps the data to 'View Model' (/Models/Forms/ProgramForm) </li>
+    <li>The 'View Model' puts a little make up on data and adds +5 to data handsome (I doubt this is the proper way to handle the better looking need, but it works)</li>
+    <li>Some loop nesting is going on <i>(I hope no one's pregnant - google 'nesting instinct')</i></li>
+    <li>I used Nhibernate's CreateSQLQuery to write a custom SQL statment that does math to determine the weighted average<i>(I'll never forgive you Nhibernate for making me do SQL work...yes, of course cuddling will help.)</i></li>
 </ul>
 </asp:Content>

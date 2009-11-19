@@ -296,3 +296,9 @@ div#title
     font-weight: bold;
     color: #ff0000;
 }
+
+.tableHeader
+{
+    color: #ffffff;
+    background-color: #969696;    
+}

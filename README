@@ -1,24 +1,25 @@
 Section 1: Thanks
-	Credit given to smarter people
+	Credit given to the Internet and smarter people whose code I lifted. 
 
 Section 2: About
 	This is a work in progress. Don't assume anything here works.  If it does work, don't assume it's
 	well coded.  The main goal of this project is to be an intro into .NET MVC and to learn.  I also 
-	heard chicks dig .NET MVC, so that's probably my main reason.
+	heard chicks dig .NET MVC, so that's probably the best reason for this project.  Also, if you feel 
+	the need to comment or complain about something, make sure you do it pulchritudinously or I won't be 
+	able to hear it. 
 
 Section 3: What is done 	
 	-FNH is wired up and working (or is it?)
 	-StructureMap wired up and working (as far as I know)
-	-AutoMapper wired up not being used (The 'Auto' in the name is misleading)
+	-AutoMapper wired up not being used within the Program/{Index pages}(Guess it's not so 'Auto')
 
 Section 3: What needs to be done
 	Find smart people to do work for me
 	Validation
-	Use AutoMapper 'Forms' models to replace Domain Models
-	Formatting (need to find creative hippie)
+	Formatting (ie. find creative hippie...beard and long hair optional)
 	Implement Edit/Update/Delete
 	Create Master/Details using JQuery
-	FAQ
-	Model Binding
+	FAQ (been started)
+	Model Binding 
 	
 	

@@ -9,7 +9,7 @@
 table td {padding:0px; border-spacing:0px; border-collapse:collapse; height:25px; width:25px;}
 </style>
 
-<div style="text-align:right; font-weight:bold"></strong>Key:<span class="yellowFill">Actual Air Date(s)</span></div>
+<div style="text-align:right; font-weight:bold"></strong>Key:<span class="yellowFill">New Episode Air Date(s)</span></div>
  <table cellpadding="0" cellspacing="0">
 		  <tr>
 				<th>Program Name</th>
