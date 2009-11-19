@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-        <strong>ASP.Net MVC + Fluent Nhibernate + StructureMap + AutoMapper + JQuery = Lazy people (like me) need not apply</strong>
+        <strong>ASP.Net MVC + Fluent Nhibernate + StructureMap + AutoMapper + JQuery = Handsome Code</strong>
         <p></p>
        <div class="hometext">
         Not being very smart means I rely a lot on my good looks.  Unforunately, my good looks <i>(and laziness-typing is hard)</i> have only allowed me to slack until a recent project.  

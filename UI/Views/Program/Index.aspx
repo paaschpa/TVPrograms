@@ -66,7 +66,7 @@ Add 'Json' to url (/Program/IndexJson/{id}) to see same page using jquery and js
 <b>What's going on?</b>
 <ul>
     <li>This page uses the ProgramRepository and cycles the List of Seasons and List of Episodes (within the Season). </li>
-    <li>Some loop nesting is going on <i>(I hope no ones pregnant)</i></li>
+    <li>Some loop nesting is going on <i>(I hope no one's pregnant)</i></li>
     <li>I used Nhibernate's CreateSQLQuery to write a custom SQL statment that does math <i>(I'll never forgive you Nhibernate for making me do work...yes, of course cuddling will help.)</i></li>
 </ul>
 </asp:Content>
