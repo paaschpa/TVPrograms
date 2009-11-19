@@ -17,7 +17,7 @@ Inherits="System.Web.Mvc.ViewPage<Network>" %>
     
 <%} %>
 <p></p>
-Add 'Json' to url (/Network/ListJson) to see same page using jquery and json. 
+Add 'Json' to url (/Network/ListJson) to see same page using jquery and json. It's no different, just json-y.
 <p></p>
 <b>What's going on?</b>
 <ul>

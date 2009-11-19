@@ -8,40 +8,29 @@ Inherits="System.Web.Mvc.ViewPage<Program>" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    Series Review
-    <table>
+    Series Review for <%=Model.ProgramName %>
+    <table border="1">
         <th>Season</th>
         <th>Start Date</th>
         <th>End Date</th>
         <th>Episode Count</th>
         <th>Average Rating</th>
-        <% foreach (Season season in Model.Seasons.OrderBy(season => season.SeasonNumber).Reverse())
-           { %>
-            <tr>
-                <td><%= season.SeasonNumber %></td>
-                <td><%= season.StartDate.ToString("d") %></td>
-                <td><%= season.EndDate.ToString("d") %></td>
-                <td><%= season.Episodes.Count %></td>
-            </tr>
-        <% } %>
-        
         <% foreach (object[] obj in (List<object[]>)ViewData["SeasonReport"])
            { %>
             <tr>
                 <td><%= obj[0].ToString() %></td>
-                <td><%= obj[1].ToString() %></td>
-                <td><%= obj[2].ToString() %></td>
-                <td>xx</td>
+                <td><%= Convert.ToDateTime(obj[1]).ToString("d") %></td>
+                <td><%= Convert.ToDateTime(obj[2]).ToString("d") %></td>
+                <td><%= obj[3].ToString() %></td>
+                <td><%= obj[4].ToString() %></td>
             </tr>
         <% } %>
         
     </table>
-
-
-    Season Review
+    <p></p>    
     <% foreach (Season season in Model.Seasons.OrderBy(season => season.SeasonNumber).Reverse())
                 { %>
-        <%= season.SeasonNumber %>
+        <b>Season <%= season.SeasonNumber %> Review</b>
         <table>
             <th>Date</th>
             <th>Day</th>
@@ -57,7 +46,8 @@ Inherits="System.Web.Mvc.ViewPage<Program>" %>
                 <td><%= episode.HHLD_Proj %></td>
             </tr>
             <% } %>
-          </table>    
+          </table>
+          <p></p>  
         <% } %>
         
 <p></p>

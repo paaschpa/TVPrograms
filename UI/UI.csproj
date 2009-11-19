@@ -381,6 +381,7 @@
     <Content Include="Scripts\themes\steel\images\tree_plus.gif" />
     <Content Include="Scripts\themes\steel\images\up.gif" />
     <Content Include="Scripts\themes\steel\images\wbg.gif" />
+    <Content Include="Views\Home\FAQ.aspx" />
     <Content Include="Views\Network\List.aspx" />
     <Content Include="Views\Network\ListJson.aspx" />
     <Content Include="Views\Program\Index.aspx" />
