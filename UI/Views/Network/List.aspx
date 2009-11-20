@@ -22,7 +22,7 @@ a technique know as Jsonificationerizing.
 <p></p>
 <b>What's going on?</b>
 <ul>
-<li>This page uses the NetworkRepository to populate the dropdown list. <i>(thanks for the data Nhibernate)</i></li>
+<li>This page uses the NetworkRepository to populate the dropdown list. <i>(thanks for getting the data Nhibernate)</i></li>
 <li>Next, it gets the first Network model <i>(of the non-good-looking variety)</i> and passes it on to the view (this page) </li>
 <li>If you don't believe me go look at the code in NetworkController.</li>  
 <li>The view gets the List of Programs from the ugly model and passes it to a ProgramList partial. (all the data relations are done by the Fluent Nhibernate mapping.  <i>All sexy relations are done by me...this joke needs some reworking</i>)</li>

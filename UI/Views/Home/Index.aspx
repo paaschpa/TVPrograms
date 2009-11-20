@@ -26,6 +26,6 @@
          <p></p>
         <strong>What the Sample does</strong><br />
          I could have used the Nerd Dinner sample, but there is already too much nerdy stuff going on with this. It just made sense to go with something all lazy, good-looking people know-Television.        
-         After the database is populated (create tables with DatabaseSchema.sql, populate tables with DatabaseData.sql) a user (preferably a good-looking user) can select Programs by Network and click on the program to view some data about the Program. [MORE TO COME]
+         After the database is populated (create tables with DatabaseSchema.sql, populate tables with DatabaseData.sql) a user <i>(preferably a good-looking user)</i> can select Programs by Network and click on the program to view some data about the Program. [MORE TO COME]
         </div>
 </asp:Content>

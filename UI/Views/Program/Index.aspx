@@ -60,8 +60,8 @@ Add 'Json' to url (/Program/IndexJson/{id}) to see same page using jquery and js
 <b>What's going on?</b>
 <ul>
     <li>This page uses the ProgramRepository to get our data. AutoMapper maps the data to 'View Model' (/Models/Forms/ProgramForm) </li>
-    <li>The 'View Model' puts a little make up on data and adds +5 to data handsome (I doubt this is the proper way to handle the better looking need, but it works)</li>
-    <li>Some loop nesting is going on <i>(I hope no one's pregnant - google 'nesting instinct')</i></li>
-    <li>I used Nhibernate's CreateSQLQuery to write a custom SQL statment that does math to determine the weighted average<i>(I'll never forgive you Nhibernate for making me do SQL work...yes, of course cuddling will help.)</i></li>
+    <li>The 'View Model' puts a little make up on data and adds +5 to the data's handsomenes (I doubt the code I wrote is the proper way to handle converting the data, but it works)</li>
+    <li>Some loop nesting is going on <i>(I hope no one's pregnant - google 'nesting instinct' if you don't get the joke...still not funny? Well, maybe you just don't know funny)</i></li>
+    <li>I used Nhibernate's CreateSQLQuery to write a custom SQL statment that does math to determine the weighted average<i>(I'll never forgive you Nhibernate for making me do SQL work...yes, of course cuddling will help the healing process.)</i></li>
 </ul>
 </asp:Content>
