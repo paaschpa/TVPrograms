@@ -84,12 +84,15 @@
     <Compile Include="Mapping\EpisodeTweetMapping.cs" />
     <Compile Include="Mapping\NetworkMapping.cs" />
     <Compile Include="Mapping\ProgramMapping.cs" />
+    <Compile Include="Mapping\RoleMapping.cs" />
     <Compile Include="Mapping\SeasonMapping.cs" />
+    <Compile Include="Mapping\UserMapping.cs" />
     <Compile Include="NhibernateModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\NetworkRepository.cs" />
     <Compile Include="Repository\ProgramRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="SessionCache.cs" />
   </ItemGroup>
   <ItemGroup>

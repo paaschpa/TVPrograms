@@ -8,5 +8,6 @@ namespace TVPrograms.Core.Domain.Repository
 {
     public interface INetworkRepository : IRepository<Network>
     {
+        
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using TVPrograms.UI.Models.Forms;
+using TVPrograms.Helpers.Binders;
 
 namespace TVPrograms.UI
 {
@@ -39,6 +40,7 @@ namespace TVPrograms.UI
             AutoMapperConfiguration.Configure();
             BootStrapper.ConfigureStructureMap();
             ControllerBuilder.Current.SetControllerFactory(new ControllerFactory());
+            ModelBinders.Binders.DefaultBinder = new SmartBinder();
         }
     }
 }

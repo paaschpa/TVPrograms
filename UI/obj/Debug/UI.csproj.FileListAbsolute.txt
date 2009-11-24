@@ -19,3 +19,5 @@ D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\bin\NHibernate.xml
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\obj\Debug\UI.dll
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\obj\Debug\UI.pdb
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\bin\AutoMapper.dll
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\bin\Castle.Components.Validator.dll
+D:\users\ppaasch\Documents\wwwroot\TVPrograms\UI\bin\Castle.Components.Validator.xml

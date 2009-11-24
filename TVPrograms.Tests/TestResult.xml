@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\users\ppaasch\Documents\wwwroot\TVPrograms\TVPrograms.Tests\TVPrograms.Tests.csproj" total="2" errors="0" failures="0" not-run="0" ignored="0" skipped="0" invalid="0" date="2009-11-24" time="15:52:25">
+  <environment nunit-version="2.5.0.9122" clr-version="2.0.50727.3053" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="D:\users\ppaasch\Documents\wwwroot\TVPrograms\TVPrograms.Tests" machine-name="PCCND81524V4" user="ppaasch" user-domain="PCCND81524V4" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="D:\users\ppaasch\Documents\wwwroot\TVPrograms\TVPrograms.Tests\TVPrograms.Tests.csproj" executed="True" success="True" time="7.188" asserts="0">
+    <results>
+      <test-suite name="D:\users\ppaasch\Documents\wwwroot\TVPrograms\TVPrograms.Tests\bin\Debug\TVPrograms.Tests.dll" executed="True" success="True" time="7.172" asserts="0">
+        <results>
+          <test-suite name="TVPrograms" executed="True" success="True" time="7.172" asserts="0">
+            <results>
+              <test-suite name="Tests" executed="True" success="True" time="7.172" asserts="0">
+                <results>
+                  <test-suite name="NetworkControllerTester" executed="True" success="True" time="5.953" asserts="0">
+                    <results>
+                      <test-case name="TVPrograms.Tests.NetworkControllerTester.Should_return_first_network" executed="True" success="True" time="5.953" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="UserRepositoryTester" executed="True" success="True" time="1.203" asserts="0">
+                    <results>
+                      <test-case name="TVPrograms.Tests.UserRepositoryTester.Should_AddOneUser" executed="True" success="True" time="1.203" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

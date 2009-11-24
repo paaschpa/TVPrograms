@@ -55,11 +55,19 @@
     <Compile Include="Domain\Model\Helpers\HashCodeGenerator.cs" />
     <Compile Include="Domain\Model\Network.cs" />
     <Compile Include="Domain\Model\Program.cs" />
+    <Compile Include="Domain\Model\Role.cs" />
     <Compile Include="Domain\Model\Season.cs" />
+    <Compile Include="Domain\Model\User.cs" />
     <Compile Include="Domain\Repository\INetworkRepository.cs" />
     <Compile Include="Domain\Repository\IProgramRepository.cs" />
     <Compile Include="Domain\Repository\IRepository.cs" />
+    <Compile Include="Domain\Repository\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\Cryptography.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="Services\ICryptography.cs" />
+    <Compile Include="Services\IUserSession.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

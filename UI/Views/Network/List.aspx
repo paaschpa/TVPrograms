@@ -13,7 +13,7 @@ Inherits="System.Web.Mvc.ViewPage<Network>" %>
 
 <% if(Model != null){ %>
 
-    <%Html.RenderPartial("ProgramList",Model.Programs); %>
+    <%Html.RenderPartial("ProgramAirDates",Model.Programs); %>
     
 <%} %>
 <p></p>

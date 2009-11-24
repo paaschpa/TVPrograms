@@ -38,11 +38,12 @@ namespace TVPrograms.Infrastructure
             XmlConfigurator.ConfigureAndWatch(fileInfo);
         }
 
+        //x.FromConnectionStringWithKey("ConnectionString")
         private void InitializeNHibernateSessionFactory()
         {
             var fluentConfig = Fluently.Configure()
             .Database(MsSqlConfiguration.MsSql2005.ConnectionString(x =>
-                x.FromConnectionStringWithKey("ConnectionString")
+                x.Server("PCCND81524V4").Database("TVPrograms").TrustedConnection()
             ).Cache(c => c
             .UseQueryCache())
             .ShowSql()).
@@ -54,6 +55,8 @@ namespace TVPrograms.Infrastructure
                     m.FluentMappings.AddFromAssemblyOf<Mapping.NetworkMapping>();
                     m.FluentMappings.AddFromAssemblyOf<Mapping.ProgramMapping>();
                     m.FluentMappings.AddFromAssemblyOf<Mapping.SeasonMapping>();
+                    m.FluentMappings.AddFromAssemblyOf<Mapping.UserMapping>();
+                    m.FluentMappings.AddFromAssemblyOf<Mapping.RoleMapping>();
                 });
             var nhibConfig = fluentConfig.BuildConfiguration();
             SessionFactory = nhibConfig.BuildSessionFactory();

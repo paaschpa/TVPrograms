@@ -8,8 +8,9 @@ using TVPrograms.Core.Domain.Model;
 using TVPrograms.Core.Domain.Repository;
 using TVPrograms.UI.Models.Forms;
 using TVPrograms.UI.Models.Forms.Mappers;
+using TVPrograms.Core.Domain;
 
-namespace UI.Controllers
+namespace TVPrograms.UI.Controllers
 {
     public class NetworkController : Controller
     {
@@ -55,7 +56,7 @@ namespace UI.Controllers
             Network network = _networkRepository.GetById(id);
 
             if (Request.IsAjaxRequest())
-                return PartialView("ProgramList", network.Programs);
+                return PartialView("ProgramAirDates", network.Programs);
 
             return View("");
         }

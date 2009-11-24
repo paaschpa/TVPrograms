@@ -11,7 +11,7 @@ using TVPrograms.Core.Domain;
 using TVPrograms.UI.Models.Forms;
 using TVPrograms.UI.Models.Forms.Mappers;
 
-namespace UI.Controllers
+namespace TVPrograms.UI.Controllers
 {
     public class ProgramController : Controller
     {

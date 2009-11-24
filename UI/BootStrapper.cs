@@ -35,6 +35,7 @@ namespace TVPrograms.UI
                 {
                     x.Assembly("Infrastructure");
                     x.Assembly("UI");
+                    x.Assembly("Core");
                     x.With<DefaultConventionScanner>();
                     x.LookForRegistries();
                 });

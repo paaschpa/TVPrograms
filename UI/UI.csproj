@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Components.Validator, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Castle.Components.Validator.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap, Version=2.5.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\StructureMap.dll</HintPath>
@@ -65,9 +69,11 @@
   <ItemGroup>
     <Compile Include="BootStrapper.cs" />
     <Compile Include="ControllerFactory.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NetworkController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -75,12 +81,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Binders\SmartBinder.cs" />
     <Compile Include="Helpers\ProgramScheduleExtension.cs" />
+    <Compile Include="Helpers\UserSession.cs" />
     <Compile Include="Models\Forms\AutoMapperConfiguration.cs" />
     <Compile Include="Models\Forms\AutoMapperProfile.cs" />
     <Compile Include="Models\Forms\DaypartForm.cs" />
     <Compile Include="Models\Forms\EpisodeForm.cs" />
     <Compile Include="Models\Forms\EpisodeTweetForm.cs" />
+    <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\Mappers\AutoFormMappercs.cs" />
     <Compile Include="Models\Forms\Mappers\EpisodeMapper.cs">
       <SubType>Code</SubType>
@@ -91,12 +100,15 @@
     <Compile Include="Models\Forms\Mappers\INetworkMapper.cs" />
     <Compile Include="Models\Forms\Mappers\IProgramMapper.cs" />
     <Compile Include="Models\Forms\Mappers\ISeasonMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\IUserMapper.cs" />
     <Compile Include="Models\Forms\Mappers\NetworkMapper.cs" />
     <Compile Include="Models\Forms\Mappers\ProgramMapper.cs" />
     <Compile Include="Models\Forms\Mappers\SeasonMapper.cs" />
+    <Compile Include="Models\Forms\Mappers\UserMapper.cs" />
     <Compile Include="Models\Forms\NetworkForm.cs" />
     <Compile Include="Models\Forms\ProgramForm.cs" />
     <Compile Include="Models\Forms\SeasonForm.cs" />
+    <Compile Include="Models\Forms\UserForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -382,11 +394,14 @@
     <Content Include="Scripts\themes\steel\images\up.gif" />
     <Content Include="Scripts\themes\steel\images\wbg.gif" />
     <Content Include="Views\Home\FAQ.aspx" />
+    <Content Include="Views\Login\Index.aspx" />
     <Content Include="Views\Network\List.aspx" />
     <Content Include="Views\Network\ListJson.aspx" />
     <Content Include="Views\Program\Index.aspx" />
     <Content Include="Views\Program\IndexJson.aspx" />
-    <Content Include="Views\Shared\ProgramList.ascx" />
+    <Content Include="Views\Shared\ProgramAirDates.ascx" />
+    <Content Include="Views\User\Edit.aspx" />
+    <Content Include="Views\User\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.3.2.js" />

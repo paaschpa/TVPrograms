@@ -25,6 +25,7 @@ namespace TVPrograms.UI.Models.Forms
             Mapper.CreateMap<Program, ProgramForm>();
             Mapper.CreateMap<Season, SeasonForm>();
             Mapper.CreateMap<Episode, EpisodeForm>();
+            Mapper.CreateMap<User, UserForm>();
         }
     }
 }
