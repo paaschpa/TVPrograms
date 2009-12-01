@@ -7,25 +7,12 @@ Inherits="System.Web.Mvc.ViewPage<UserForm>" %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<% if (ViewData.ModelState.Count > 0)
+   {
+       Response.Write(Html.ValidationSummary());
+   }       
+%>
 
-<% using(Html.BeginForm("Save")) { %>
-
-        <fieldset>
-            <legend>User Profile</legend>
-        
-            <%=Html.Hidden("id", Model.id)%>            	
-			<%=Html.TextBox("username", Model.Username)%>
-			<%=Html.TextBox("fullname", Model.FullName)%>
-			<%=Html.TextBox("emailaddress", Model.EmailAddress)%>
-			<%=Html.TextBox("password", Model.Password)%>
-			<%=Html.TextBox("confirmpassword", Model.ConfirmPassword)%>
-			
-			<p class="buttons">
-			    <input type="submit" value="Save" />
-			    <%= Html.ActionLink("Cancel", "Index") %>				
-			</p>
-		</fieldset>			
-
-<% } %>
+<%Html.RenderPartial("UserForm",Model); %>
 
 </asp:Content>

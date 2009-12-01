@@ -12,5 +12,6 @@ namespace TVPrograms.UI.Models.Forms.Mappers
     {
         UserForm[] Map(User[] model);
         User[] Map(UserForm[] message);
+        void MapToModel1(UserForm form, User model);
     }
 }

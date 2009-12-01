@@ -33,6 +33,17 @@ namespace TVPrograms.UI.Models.Forms.Mappers
             model.Username = form.Username;
         }
 
+        public void MapToModel1(UserForm form, User model)
+        {
+            model.id = form.id;
+            model.FullName = form.FullName;
+            model.EmailAddress = form.EmailAddress;
+            model.PasswordSalt = _cryptographer.CreateSalt();
+            model.PasswordHash = _cryptographer.GetPasswordHash(form.Password,
+                                                                model.PasswordSalt);
+            model.Username = form.Username;
+        }
+
         public UserForm[] Map(User[] model)
         {
             return model.Select(user => Map(user)).ToArray();

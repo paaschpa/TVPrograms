@@ -8,6 +8,7 @@ namespace TVPrograms.UI.Models.Forms
     {
         public virtual string FullName { get; set; }
 
+        [ValidateEmail]
         public virtual string EmailAddress { get; set; }
 
         public virtual int id { get; set; }

@@ -400,6 +400,8 @@
     <Content Include="Views\Program\Index.aspx" />
     <Content Include="Views\Program\IndexJson.aspx" />
     <Content Include="Views\Shared\ProgramAirDates.ascx" />
+    <Content Include="Views\Shared\UserForm.ascx" />
+    <Content Include="Views\User\Create.aspx" />
     <Content Include="Views\User\Edit.aspx" />
     <Content Include="Views\User\Index.aspx" />
     <Content Include="Web.config" />
