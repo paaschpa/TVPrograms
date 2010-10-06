@@ -25,7 +25,6 @@ namespace TVPrograms.UI
 
         public class ServiceRegistry : StructureMap.Configuration.DSL.Registry
         {
-
             
             protected override void configure()
             {

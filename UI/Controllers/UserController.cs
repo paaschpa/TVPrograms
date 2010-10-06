@@ -50,8 +50,6 @@ namespace UI.Controllers
             return View(form);
         }
 
-
-
         public ActionResult Edit(int id)
         {
             UserForm form = _userMapper.Map(_userRepository.GetById(id));

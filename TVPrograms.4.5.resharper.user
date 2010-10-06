@@ -1,0 +1,31 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="E089037F-30C0-4DB3-BDA2-E8278780F440/d:Domain/d:Repository/f:IProgramRepository.cs" caret="272" fromTop="10" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/f:Global.asax.cs" caret="1432" fromTop="41" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/f:ControllerFactory.cs" caret="106" fromTop="6" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Views/d:Program/f:IndexJson.aspx" caret="1960" fromTop="23" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Views/d:Shared/f:Site.Master" caret="0" fromTop="0" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Controllers/f:ProgramController.cs" caret="2797" fromTop="46" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Views/d:Shared/f:ProgramAirDates.ascx" caret="1061" fromTop="20" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Views/d:Network/f:ListJson.aspx" caret="352" fromTop="0" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Views/d:Network/f:List.aspx" caret="461" fromTop="10" />
+      <File id="D3B43775-FEF1-4656-B4B5-4A166729707E/d:Controllers/f:NetworkController.cs" caret="1727" fromTop="15" />
+      <File id="FA464DBE-1D82-4681-AA25-D0C019F07EDA/d:Repository/f:ProgramRepository.cs" caret="1373" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>

@@ -30,7 +30,6 @@
                     <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
                     <li><%= Html.ActionLink("Networks", "List", "Network") %></li>
                     <li><%= Html.ActionLink("FAQ", "FAQ", "Home") %></li>
-                    <li>Admin</li>
                 </ul>
             
             </div>

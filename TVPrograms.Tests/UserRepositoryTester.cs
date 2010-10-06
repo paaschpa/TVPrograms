@@ -19,6 +19,7 @@ namespace TVPrograms.Tests
     [TestFixture]
     class UserRepositoryTester
     {
+        
         [Test]
         public void Should_AddOneUser()
         {

@@ -26,7 +26,7 @@ namespace TVPrograms.UI.Controllers
         public ActionResult List()
         {
             /* See, I told you - See page /Network/List.aspx to know why you just got served
-             * a helping of I told you so...careful, don't get got in a recursive 'I told you so'
+             * a helping of I told you so...careful, don't get caught in a recursive 'I told you so'
             */
             IList<Network> networks = _networkRepository.GetAll();
             ViewData["ddlNetworks"] = new SelectList(networks,"id","NetworkName");

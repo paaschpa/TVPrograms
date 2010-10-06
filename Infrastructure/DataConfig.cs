@@ -43,20 +43,13 @@ namespace TVPrograms.Infrastructure
         {
             var fluentConfig = Fluently.Configure()
             .Database(MsSqlConfiguration.MsSql2005.ConnectionString(x =>
-                x.Server("PCCND81524V4").Database("TVPrograms").TrustedConnection()
+                x.Server("PC2CE944D9ZT").Database("TVPrograms").TrustedConnection()
             ).Cache(c => c
             .UseQueryCache())
             .ShowSql()).
             Mappings(m => 
                 {
                     m.FluentMappings.AddFromAssemblyOf<Mapping.DaypartMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.EpisodeMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.EpisodeTweetMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.NetworkMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.ProgramMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.SeasonMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.UserMapping>();
-                    m.FluentMappings.AddFromAssemblyOf<Mapping.RoleMapping>();
                 });
             var nhibConfig = fluentConfig.BuildConfiguration();
             SessionFactory = nhibConfig.BuildSessionFactory();

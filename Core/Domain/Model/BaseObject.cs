@@ -9,7 +9,6 @@ namespace TVPrograms.Core.Domain.Model
     public abstract class BaseObject
     {
 
-
     }
 }
 

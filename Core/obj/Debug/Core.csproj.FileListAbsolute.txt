@@ -3,3 +3,13 @@ D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\bin\Debug\Core.dll
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\bin\Debug\Core.pdb
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\obj\Debug\Core.dll
 D:\users\ppaasch\Documents\wwwroot\TVPrograms\Core\obj\Debug\Core.pdb
+F:\TVPrograms\Core\bin\Debug\Core.dll
+F:\TVPrograms\Core\bin\Debug\Core.pdb
+F:\TVPrograms\Core\obj\Debug\ResolveAssemblyReference.cache
+F:\TVPrograms\Core\obj\Debug\Core.dll
+F:\TVPrograms\Core\obj\Debug\Core.pdb
+D:\users\ppaasch\Documents\TVPrograms\Core\bin\Debug\Core.dll
+D:\users\ppaasch\Documents\TVPrograms\Core\bin\Debug\Core.pdb
+D:\users\ppaasch\Documents\TVPrograms\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\users\ppaasch\Documents\TVPrograms\Core\obj\Debug\Core.dll
+D:\users\ppaasch\Documents\TVPrograms\Core\obj\Debug\Core.pdb
